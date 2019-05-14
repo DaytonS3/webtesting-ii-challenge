@@ -36,6 +36,25 @@ class Dashboard extends React.Component {
     }
   };
 
+  onHit = () => {
+    this.setState({
+      strikes: 0,
+      balls: 0
+    });
+  };
+
+  onFoul = () => {
+    if (this.state.strikes === 2) {
+      this.setState({
+        strikes: this.state.strikes
+      });
+    } else {
+      this.setState({
+        strikes: this.state.strikes + 1
+      });
+    }
+  };
+
   render() {
     return (
       <div>
@@ -44,8 +63,8 @@ class Dashboard extends React.Component {
         <h1>Dashboard</h1>
         <button onClick={this.onBall}>Ball</button>
         <button onClick={this.onStrike}>Strike</button>
-        <button>Foul</button>
-        <button>Hit</button>
+        <button onClick={this.onFoul}>Foul</button>
+        <button onClick={this.onHit}>Hit</button>
       </div>
     );
   }
