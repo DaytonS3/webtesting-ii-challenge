@@ -1,9 +1,14 @@
 import React from "react";
-import ReactDOM from "react-dom";
+import { render, fireEvent } from "react-testing-library";
+import "react-testing-library/cleanup-after-each";
+import Display from "./components/Display";
+import Dashboard from "./components/Dashboard";
 import App from "./App";
 
-it("renders without crashing", () => {
-  const div = document.createElement("div");
-  ReactDOM.render(<App />, div);
-  ReactDOM.unmountComponentAtNode(div);
+it("render fine", () => {
+  render(<App />);
+});
+
+it("should reset ball if there is 4", () => {
+  const { getByTestId } = render(<Display />);
 });

@@ -4,7 +4,7 @@ class Display extends React.Component {
   render() {
     return (
       <div>
-        <p>Balls: {this.props.balls}</p>
+        <p data-testid="balls">Balls: {this.props.balls}</p>
         <p>Strikes: {this.props.strikes}</p>
       </div>
     );
